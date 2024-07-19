@@ -33,6 +33,7 @@ namespace SLZ.MarrowEditor
         private Texture2D levelIcon;
         private Texture2D avatarIcon;
         private Texture2D packPalletIcon;
+        private Texture2D spawnableCrateIcon;
         Pallet pallet;
         private static bool packing = false;
         private Nullable<bool> installSuccess = null;
@@ -65,6 +66,8 @@ namespace SLZ.MarrowEditor
                 levelIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(MarrowSDK.GetPackagePath("Editor/Assets/Icons/Warehouse/crate-level.png"));
             if (avatarIcon == null)
                 avatarIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(MarrowSDK.GetPackagePath("Editor/Assets/Icons/Warehouse/crate-avatar.png"));
+            if (spawnableCrateIcon == null)
+                spawnableCrateIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(MarrowSDK.GetPackagePath("Editor/Assets/Icons/Warehouse/crate-ball.png"));
             if (packPalletIcon == null)
                 packPalletIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(MarrowSDK.GetPackagePath("Editor/Assets/Icons/Warehouse/packed-pallet.png"));
             if (!scannableIconCache.ContainsKey(typeof(DataCard)))
@@ -181,6 +184,18 @@ namespace SLZ.MarrowEditor
                             {
                                 var wizard = CrateWizard.CreateWizard(pallet);
                                 wizard.crateType = CrateWizard.CrateType.AVATAR_CRATE;
+                            }
+
+                            GUILayout.FlexibleSpace();
+                        }
+                        EditorGUILayout.Space(EditorGUIUtility.singleLineHeight / 4f);
+                        using (new GUILayout.VerticalScope())
+                        {
+                            GUILayout.FlexibleSpace();
+                            if (GUILayout.Button(new GUIContent(" Spawnable Crate", spawnableCrateIcon, "Create a new Spawnable Crate"), GUILayout.ExpandWidth(false)))
+                            {
+                                var wizard = CrateWizard.CreateWizard(pallet);
+                                wizard.crateType = CrateWizard.CrateType.SPAWNABLE_CRATE;
                             }
 
                             GUILayout.FlexibleSpace();
