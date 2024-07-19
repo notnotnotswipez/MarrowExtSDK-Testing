@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.stresslevelzero.marrow.sdk/Editor/Assets/EditorStyleSheets/MarrowStyles.uss?fileID=7433441132597879392&amp;guid=7ebe2475af85eae4ca7aeb90fab90275&amp;type=3#MarrowStyles" />
+    <ui:VisualElement name="rootContainer">
+        <ui:VisualElement name="validationFeedback" style="visibility: visible; display: flex; margin-bottom: 0;">
+            <ui:IMGUIContainer name="imguiValidationContainer" style="margin-bottom: 10px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="fieldsContainer">
+            <ui:Label text="Welcome to the MarrowSDK!" display-tooltip-when-elided="true" name="welcomeSDK" style="-unity-font-style: bold; font-size: 18px; margin-bottom: 10px;" />
+            <ui:Label text="The MarrowSDK is powered by Pallets, Crates and Datacards that are all housed in the Asset Warehouse.&#10;&#10;&lt;i&gt;Crates&lt;/i&gt; hold content like &lt;b&gt;Avatars, Levels and Spawnables&lt;/b&gt;.  &#10;&lt;i&gt;Datacards&lt;/i&gt; provide references to key pieces of information.&#10;&#10;Mod projects have a mixture of &lt;i&gt;External Pallets&lt;/i&gt; and &lt;i&gt;Working Pallets&lt;/i&gt; that serve as containers that organize the project&apos;s Crates and Datacards.&#10;&#10;- &lt;i&gt;External Pallets&lt;/i&gt; reference vanilla Bonelab content or even the pallets and contents of other mod projects.  &#10;- The &lt;i&gt;Working Pallet&lt;/i&gt; contain the current mod project&apos;s custom Crate and Datacard content.&#10;" name="readmeSDKOverview" style="font-size: 12px; display: flex; white-space: normal; margin-bottom: 10px;" />
+            <ui:VisualElement name="readmeAWButtonContainer" style="flex-direction: row; margin-bottom: 10px;">
+                <ui:Label text="To get started, open the AssetWarehouse using this button:" name="readmeToGetStartedAW" style="font-size: 14px; display: flex; white-space: normal;" />
+                <ui:Button display-tooltip-when-elided="true" name="readmeAssetWarehouseButton" tooltip="This quick access Asset Warehouse button is always available in the top-left corner of the Unity editor" style="width: 40px; height: 24px; bottom: 5px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="readmeDocsButtonContainer" style="flex-direction: row; height: 22px; width: 348px;">
+                <ui:Label text="Need Help?  Check out the " name="readmeMarrowDocsInfo" style="font-size: 14px; display: flex; white-space: normal; height: 21px;" />
+                <ui:Button display-tooltip-when-elided="true" name="readmeMarrowDocsButton" tooltip="Open the MarrowSDK In-editor documentation." text="MarrowSDK Docs" class="linkText" style="width: 120px; height: 24px; bottom: 5px; font-size: 14px; padding-left: 1px; padding-right: 2px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="readmeDocsButtonContainer" style="flex-direction: row;">
+                <ui:Label text="or the" name="readmeMarrowWikisInfo" style="font-size: 14px; display: flex; white-space: normal;" />
+                <ui:Button display-tooltip-when-elided="true" name="readmeMarrowWikiButton" tooltip="Open the online MarrowSDK Wiki in the default browser." text="MarrowSDK Wiki" class="linkText" style="width: 120px; height: 24px; bottom: 5px; font-size: 14px; padding-left: 1px; padding-right: 2px; margin-left: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="imguiInspectorContainer" style="display: none;">
+            <ui:Foldout text="Default IMGUI Inspector" name="imguiContainerFoldout" value="false" style="padding-top: 10px;">
+                <ui:IMGUIContainer name="imguiInspector" style="display: none;" />
+            </ui:Foldout>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

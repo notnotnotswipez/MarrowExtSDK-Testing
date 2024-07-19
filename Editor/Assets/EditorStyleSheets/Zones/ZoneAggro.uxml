@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.stresslevelzero.marrow.sdk/Editor/Assets/EditorStyleSheets/MarrowStyles.uss?fileID=7433441132597879392&amp;guid=7ebe2475af85eae4ca7aeb90fab90275&amp;type=3#MarrowStyles" />
+    <ui:VisualElement name="rootContainer">
+        <ui:Foldout text="Usage Info" name="usageInfo" value="false">
+            <ui:Label display-tooltip-when-elided="true" text="ZoneAggro uses the Zone Linking system to alert enemies of the player" name="zoneAggroInfo" style="white-space: normal; font-size: 12px;" />
+            <ui:Button text="MarrowSDK Documentation - Zone Aggro" display-tooltip-when-elided="true" name="marrowDocsButton" binding-path="marrowDocsButton" tooltip="Open the MarrowSDK Documentation in the default web browser." style="margin-top: 10px; width: auto; align-items: auto; justify-content: flex-start;" />
+        </ui:Foldout>
+        <ui:VisualElement name="validationFeedback" style="visibility: visible; display: flex; margin-top: 10px;">
+            <ui:IMGUIContainer name="imguiValidationContainer" />
+        </ui:VisualElement>
+        <ui:VisualElement name="fieldsContainer">
+            <uie:PropertyField name="_zone" binding-path="_zone" label="Zone" tooltip="Automatically set to this ZoneCuller&apos;s Zone." />
+            <uie:PropertyField name="_zoneLink" binding-path="_zoneLink" label="ZoneLink" tooltip="Automatically set to this ZoneCuller&apos;s ZoneLink." />
+            <uie:PropertyField name="beingTags" binding-path="beingTags" label="Being Tags" />
+            <uie:PropertyField name="playerTag" binding-path="playerTag" label="Player Tag" />
+        </ui:VisualElement>
+        <ui:VisualElement name="imguiInspectorContainer" style="display: none;">
+            <ui:Foldout text="Default IMGUI Inspector" name="imguiContainerFoldout" value="false" style="padding-top: 10px;">
+                <ui:IMGUIContainer name="imguiInspector" />
+            </ui:Foldout>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

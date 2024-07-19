@@ -1,0 +1,13 @@
+using JetBrains.Annotations;
+
+namespace SLZ.Marrow.Forklift
+{
+	[PublicAPI]
+	public readonly struct FileDownloadProgress
+	{
+		public readonly long BytesDownloaded;
+
+		public readonly long BytesTotal;
+
+	}
+}

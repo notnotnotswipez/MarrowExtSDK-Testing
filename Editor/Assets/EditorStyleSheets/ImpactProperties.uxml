@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.stresslevelzero.marrow.sdk/Editor/Assets/EditorStyleSheets/MarrowStyles.uss?fileID=7433441132597879392&amp;guid=7ebe2475af85eae4ca7aeb90fab90275&amp;type=3#MarrowStyles" />
+    <ui:VisualElement name="rootContainer">
+        <ui:Foldout text="Usage Info" name="usageInfo" value="false">
+            <ui:Label display-tooltip-when-elided="true" text="Impact Properties use Surface Data Cards to add physical properties and visual effects when colliders of dynamic objects and the static environment are hit.&lt;br&gt;&lt;br&gt;The Impact Properties Utils window found in the Stress Level Zero -&gt; Level Tools menu can display all Impact Properties objects throughout a scene in a single window, allowing for bulk Surface Data Card and Physics Materials updates.&lt;br&gt;&lt;br&gt;The Surface Data Painter Overlay and Visualization Gizmos can be toggled from any Impact Properties component or using the Unity Overlays menu (press spacebar with the Scene in focus).  The Impact Properties Gizmos will show an overlay atop all surfaces with Impact Properties in a level that are color-coded with their current Surface Data.  The Surface Data Painter Overlay can also be used to find collider surfaces and rigidbodies that are missing Impact Properties components." name="usageInfoText" style="white-space: normal; font-size: 12px;" />
+            <ui:Button text="MarrowSDK Documentation - ImpactProperties" display-tooltip-when-elided="true" name="marrowDocsButton" binding-path="marrowDocsButton" tooltip="Open the MarrowSDK Documentation in the default web browser." style="margin-top: 10px; width: auto; align-items: auto; justify-content: flex-start;" />
+        </ui:Foldout>
+        <ui:VisualElement name="validationFeedback" style="visibility: visible; display: flex; margin-top: 10px;">
+            <ui:IMGUIContainer name="imguiValidationContainer" />
+        </ui:VisualElement>
+        <ui:VisualElement name="fieldsContainer">
+            <ui:Label text="References" display-tooltip-when-elided="true" name="ReferencesLabel" style="-unity-font-style: bold; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-bottom: 5px;" />
+            <uie:PropertyField name="_surfaceDataCard" label="Surface Data Card" binding-path="_surfaceDataCard" />
+            <uie:EnumField label="Decal Type" value="Collider" name="DecalType" type="SLZ.Marrow.ImpactProperties+DecalType, SLZ.Marrow" />
+            <uie:PropertyField name="surfaceData" binding-path="surfaceData" label="(Obsolete) Surface Data" tooltip="Soon to be removed, use Surface Data Card" style="display: none;" />
+            <ui:VisualElement name="applyPhysMatsContainer" style="width: 100%; flex-shrink: 0; align-items: center; flex-direction: row; justify-content: space-between; margin-left: 5px;">
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: center;">
+                    <ui:VisualElement name="suggestPhysMatsIcon" style="flex-grow: 0; width: 16px; height: 16px; margin-right: 5px;" />
+                    <ui:Label tabindex="-1" text="Suggested PhysMat:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="suggestedPhysMatTitleLabel" />
+                    <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="suggsetedPhysMatLabel" style="margin-left: 5px;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 0; flex-direction: row;">
+                    <ui:Button display-tooltip-when-elided="true" name="applyPhysMatsButton" binding-path="applyPhysMatsButton" text="Apply" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; height: 24px; width: 60px; flex-direction: row; justify-content: center; padding-right: 2px; padding-left: 2px; padding-top: 2px; padding-bottom: 2px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="imguiInspectorContainer" style="display: flex;">
+            <ui:Foldout text="Default IMGUI Inspector" name="imguiContainerFoldout" value="false" style="padding-top: 10px;">
+                <ui:IMGUIContainer name="imguiInspector" />
+            </ui:Foldout>
+        </ui:VisualElement>
+        <ui:VisualElement name="gizmoOptionsContainer" style="background-color: rgb(64, 64, 64); padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; -unity-font-style: bold; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+            <ui:Label text="Gizmo Options" display-tooltip-when-elided="true" name="gizmoOptionsLabel" style="-unity-font-style: bold; margin-bottom: 4px;" />
+            <ui:VisualElement name="gizmoOptionsButtonContainer" style="flex-direction: row;">
+                <uie:ToolbarToggle focusable="false" name="showPreviewMeshToolbarToggle" binding-path="showPreviewMeshToolbarToggle" tooltip="Toggle Preview Mesh Gizmo" class="marrowToggleOn" style="width: 30px; height: 20px; margin-left: 2px; margin-right: 34px; margin-top: 0; margin-bottom: 0; flex-grow: 0;" />
+                <ui:SliderInt picking-mode="Ignore" label="Gizmo Range" value="50" high-value="1000" name="gizmoVisRangeSlider" binding-path="gizmoVisRange" show-input-field="true" inverted="false" style="flex-grow: 1; -unity-font-style: normal; justify-content: flex-start; flex-shrink: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

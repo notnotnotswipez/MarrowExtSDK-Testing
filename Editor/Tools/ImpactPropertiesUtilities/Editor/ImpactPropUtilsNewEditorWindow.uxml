@@ -1,0 +1,46 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.stresslevelzero.marrow.sdk/Editor/Assets/EditorStyleSheets/MarrowStyles.uss?fileID=7433441132597879392&amp;guid=7ebe2475af85eae4ca7aeb90fab90275&amp;type=3#MarrowStyles" />
+    <ui:VisualElement name="impactPropsParentContainer" style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; flex-wrap: nowrap; flex-direction: row;">
+        <ui:VisualElement name="buttonContainers" style="width: 200px; height: auto; flex-shrink: 0;">
+            <ui:Label text="Impact Properties Utilities" display-tooltip-when-elided="true" name="impactPropsUtilsIntroLabel" style="white-space: normal; margin-bottom: 20px; -unity-font-style: bold; font-size: 14px; margin-top: 5px; -unity-text-align: lower-left;" />
+            <ui:VisualElement name="buttonsContainerRow1" style="margin-bottom: 20px; flex-direction: column;">
+                <ui:Button text="Selection As List" display-tooltip-when-elided="true" name="ipSetSelectionAsIPList" binding-path="ipSetSelectionAsIPList" tooltip="Sets the current Hierarchy selection of any Impact Properties objects as the active list." style="flex-grow: 1; margin-bottom: 5px; padding-top: 2px; padding-bottom: 2px;" />
+                <ui:Toggle label="Recursive Selection" value="true" name="ipRecursiveSelectionToggle" binding-path="ipRecursiveSelectionToggle" style="flex-grow: 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="buttonsContainerRow2" style="margin-bottom: 20px; flex-direction: column;">
+                <ui:Label text="Scene" display-tooltip-when-elided="true" name="sceneLabel" style="font-size: 14px; -unity-font-style: bold;" />
+                <uie:ToolbarToggle focusable="false" label="All Scene ImpactProperties" name="impactPropsAllScene" binding-path="impactPropsAllScene" class="marrowToggleOn" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 4px; margin-bottom: 4px; padding-top: 2px; padding-bottom: 2px;" />
+                <uie:ToolbarToggle focusable="false" label="ImpactProperties w/ Overrides" name="impactPropsOverridesOnly" binding-path="impactPropsOverridesOnly" class="marrowToggleOn" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 4px; margin-bottom: 5px; padding-top: 2px; padding-bottom: 2px;" />
+                <uie:ToolbarToggle focusable="false" label="Missing Surface Data" name="impactPropsSDCardMissingOverride" binding-path="impactPropsSDCardMissingOverride" class="marrowToggleOn" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 4px; margin-bottom: 4px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="buttonsContainerRow4" style="margin-bottom: 20px; flex-direction: column; align-items: stretch;">
+                <ui:Label text="Project" display-tooltip-when-elided="true" name="projectLabel" tooltip="Warning: Project searches can be slow. Limit the search by setting the Search Path starting folder." style="-unity-font-style: bold; font-size: 14px;" />
+                <ui:VisualElement name="assetPathContainer" style="flex-shrink: 0; margin-bottom: 5px;">
+                    <ui:Label text="Asset Path" display-tooltip-when-elided="true" name="impactPropsAssetSearchPathLabel" style="margin-top: 4px; margin-bottom: 4px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; flex-wrap: wrap; background-color: rgba(0, 0, 0, 0.16); border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; white-space: normal; overflow: hidden;" />
+                    <ui:Button text="Set Project Search Path" display-tooltip-when-elided="true" name="impactPropsAssetSearchPathButton" binding-path="impactPropsAssetSearchPathButton" tooltip="Filter the project prefab search query by specifying a starting folder " />
+                </ui:VisualElement>
+                <uie:ToolbarToggle focusable="false" label="All Project ImpactProperties\nPrefabs" name="impactPropsAllProjectPrefabs" binding-path="impactPropsAllProjectPrefabs" class="marrowToggleOn" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 4px; margin-bottom: 4px; padding-top: 4px; padding-bottom: 4px;" />
+                <uie:ToolbarToggle focusable="false" label="SD Card Missing on Prefab" name="impactPropsSDCardMissing" binding-path="impactPropsSDCardMissing" class="marrowToggleOn" style="width: 100%; padding-top: 4px; padding-bottom: 4px; margin-left: 0; margin-right: 0; margin-top: 4px; margin-bottom: 4px;" />
+                <uie:ToolbarToggle focusable="false" label="Obsolete SD Missing on Prefab" name="impactPropsObsoleteSDMissing" binding-path="impactPropsObsoleteSDMissing" class="marrowToggleOn" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 4px; margin-bottom: 4px; padding-top: 2px; padding-bottom: 2px; display: none;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="buttonsContainerRow1" style="margin-bottom: 20px; flex-direction: column;">
+                <ui:Button display-tooltip-when-elided="true" name="ipSurfaceDataPainterToolButton" style="flex-grow: 1; margin-bottom: 5px; padding-top: 6px; padding-bottom: 6px; flex-direction: row; justify-content: center;">
+                    <ui:VisualElement name="ipSurfaceDataPainterIconContainer" style="flex-shrink: 0; width: 24px; height: 24px;" />
+                    <ui:Label tabindex="-1" text="Surface Data Painter" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ipSurfaceDataPainterLabel" style="flex-grow: 1;" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="listAreaContainer" style="border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128); margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+            <ui:VisualElement name="allAndEmptyButtonContainer" style="flex-direction: row; justify-content: space-between;">
+                <ui:Label text="Objects&lt;br&gt;Listed: 0" display-tooltip-when-elided="true" name="objectsListedLabel" binding-path="objectsListedLabel" style="-unity-font-style: bold; font-size: 16px; height: 52px; width: 200px;" />
+                <ui:VisualElement name="allAndEmptyBorderContainer" style="flex-direction: row; flex-shrink: 0; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128); border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; height: 65px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;">
+                    <ui:Button text="Apply Modified Fields" display-tooltip-when-elided="true" name="ipApplyModifiedButton" binding-path="ipApplyModifiedButton" tooltip="Applies all modified Surface Data Card and Physics Material Fields." style="width: 300px; height: 48px;" />
+                    <ui:Toggle label="Apply Physics Materials\nRecursively to Colliders" name="applyPhysMatsToggle" binding-path="applyPhysMatsToggle" style="flex-direction: row; align-items: center; margin-left: 10px; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 20px; height: 48px; padding-right: 5px; display: none;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:IMGUIContainer name="imguiValidationContainer" style="flex-shrink: 0; margin-bottom: 2px;" />
+            <ui:VisualElement name="multiSelectApplyContainer" style="flex-direction: row; flex-shrink: 0; border-left-color: rgb(128, 128, 128); border-right-color: rgb(128, 128, 128); border-top-color: rgb(128, 128, 128); border-bottom-color: rgb(128, 128, 128); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; margin-left: 0; margin-right: 0; margin-top: 10px; margin-bottom: 0; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px;" />
+            <ui:VisualElement name="listViewContainer" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.stresslevelzero.marrow.sdk/Editor/Assets/EditorStyleSheets/MarrowStyles.uss?fileID=7433441132597879392&amp;guid=7ebe2475af85eae4ca7aeb90fab90275&amp;type=3#MarrowStyles" />
+    <ui:VisualElement name="rootContainer">
+        <ui:Foldout text="Usage Info" name="usageInfo" value="false" style="display: flex; visibility: visible;">
+            <ui:Label display-tooltip-when-elided="true" text="Adds a force impulse to an entity.  By default, the force is applied when the entity spawns from the Crate Spawner.  Disabling Apply Force On Spawn allows the force to be triggered with an event that calls ApplyForce() after the entity is awakened. " name="spawnForceInfo" style="white-space: normal; font-size: 12px;" />
+            <ui:Button text="MarrowSDK Documentation - Spawn Force" display-tooltip-when-elided="true" name="marrowDocsButton" binding-path="marrowDocsButton" tooltip="Open the MarrowSDK Documentation in the default web browser." style="margin-top: 10px; width: auto; align-items: auto; justify-content: flex-start;" />
+        </ui:Foldout>
+        <ui:VisualElement name="validationFeedback" style="visibility: visible; display: flex; margin-top: 10px;">
+            <ui:IMGUIContainer name="imguiValidationContainer" />
+        </ui:VisualElement>
+        <ui:VisualElement name="fieldsContainer">
+            <uie:PropertyField name="_crateSpawner" binding-path="_crateSpawner" label="Crate Spawner" />
+            <uie:PropertyField name="applyForceOnSpawn" binding-path="applyForceOnSpawn" label="Apply Force On Spawn" style="display: none;" />
+            <uie:PropertyField name="spawnVelocity" binding-path="spawnVelocity" label="Spawn Velocity (m/s)" />
+            <uie:PropertyField name="spawnAngularVelocity" binding-path="spawnAngularVelocity" label="Spawn Angular Velocity (rad/s)" />
+            <ui:Foldout text="Random Angular Velocity" name="RandomAngularVelocityFoldout" value="false">
+                <uie:PropertyField name="minSpawnAngularVelocity" binding-path="minSpawnAngularVelocity" label="Min Angular Velocity" />
+                <uie:PropertyField name="maxSpawnAngularVelocity" binding-path="maxSpawnAngularVelocity" label="Max Angular Velocity" />
+            </ui:Foldout>
+            <uie:PropertyField name="additionalDelay" binding-path="additionalDelay" label="Additional Delay" />
+            <uie:PropertyField name="drawVelocity" binding-path="drawVelocity" label="Draw Velocity" style="display: none;" />
+            <ui:VisualElement name="gizmoOptionsContainer" style="background-color: rgb(64, 64, 64); padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; margin-left: 1px; margin-right: 1px; margin-top: 1px; margin-bottom: 1px; -unity-font-style: bold; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+                <ui:Label text="Gizmo Options" display-tooltip-when-elided="true" name="gizmoOptionsLabel" style="-unity-font-style: bold; margin-bottom: 4px;" />
+                <ui:VisualElement name="gizmoOptionsButtonContainer" style="flex-direction: row;">
+                    <uie:ToolbarToggle focusable="false" name="showGizmoToggle" binding-path="showPreviewMeshToolbarToggle" tooltip="Toggle Gizmo" class="marrowToggleOn" style="width: 30px; height: 20px; margin-left: 2px; margin-right: 2px; margin-top: 0; margin-bottom: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="imguiInspectorContainer" style="display: none;">
+            <ui:Foldout text="Default IMGUI Inspector" name="imguiContainerFoldout" value="false" style="padding-top: 10px;">
+                <ui:IMGUIContainer name="imguiInspector" />
+            </ui:Foldout>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
