@@ -24,7 +24,7 @@ namespace SLZ.Marrow
         public const string SDK_VERSION = "1.1.0";
         public const string MIN_COMPATIBLE_VERSION = "0.6.0";
         public const string DEV_NAME = "Stress Level Zero";
-        public const string PACKAGE_NAME = "com.stresslevelzero.marrow.sdk";
+        public const string PACKAGE_NAME = "com.stresslevelzero.marrow.sdk.extended";
         public static readonly string PROJ4_NAME = "BONELAB";
         public static readonly string[] GAME_NAMES =
         {
