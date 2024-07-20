@@ -14,5 +14,10 @@ namespace SLZ.Marrow.Zones
             _crateSpawner = GetComponent<CrateSpawner>();
         }
 #endif
+
+        public void Capture()
+        {
+            _crateSpawner = GetComponent<CrateSpawner>();
+        }
     }
 }

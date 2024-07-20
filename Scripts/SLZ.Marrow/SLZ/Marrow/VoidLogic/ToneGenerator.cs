@@ -103,17 +103,17 @@ namespace SLZ.Marrow.VoidLogic
 
         public void OnBeforeSerialize()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OnAfterDeserialize()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Actuate(ref NodeState nodeState)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
