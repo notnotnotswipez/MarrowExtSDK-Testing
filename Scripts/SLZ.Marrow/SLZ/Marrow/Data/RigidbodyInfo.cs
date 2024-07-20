@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace SLZ.Marrow.Data
@@ -50,6 +50,19 @@ namespace SLZ.Marrow.Data
 
 		public void CopyFrom(Rigidbody rb)
 		{
+			mass = rb.mass;
+			drag = rb.drag;
+			angularDrag = rb.angularDrag;
+			useGravity = rb.useGravity;
+			isKinematic = rb.isKinematic;
+			detectCollisions = rb.detectCollisions;
+			interpolate = rb.interpolation;
+			constraints = rb.constraints;
+			centerOfMass = rb.centerOfMass;
+			inertiaTensor = rb.inertiaTensor;
+			inertiaTensorRotation = rb.inertiaTensorRotation;
+			initalVelocity = rb.GetRelativePointVelocity(Vector3.zero);
+			initialAngularVelocity = rb.angularVelocity;
 		}
 
 		public void CopyTo(Rigidbody rb)
