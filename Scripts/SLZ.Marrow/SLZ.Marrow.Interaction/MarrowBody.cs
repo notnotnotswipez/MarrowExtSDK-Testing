@@ -388,10 +388,10 @@ namespace SLZ.Marrow.Interaction
 		public void ValidateComponent()
 		{
 			//InteractableHost check	
-			System.Type interactableHostType = System.Type.GetType("SLZ.Interaction.InteractableHost, Assembly-CSharp",false,false);
-			if (GetComponent(interactableHostType) == null)
+			
+			if (!GetComponent<InteractableHost>())
 			{
-				gameObject.AddComponent(interactableHostType);
+				gameObject.AddComponent<InteractableHost>();
 			}
 
 			//MarrowEntity check
