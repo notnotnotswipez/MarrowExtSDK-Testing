@@ -24,7 +24,7 @@ namespace SLZ.MarrowEditor.Interaction
             private ScannableSelector.ScannableSelectorFilter scannableSelectorFilter;
             public override VisualElement CreateInspectorGUI()
             {
-                string VISUALTREE_PATH = "Packages/com.stresslevelzero.marrow.sdk/Editor/Assets/EditorStyleSheets/MarrowEntityPoseDecorator.uxml";
+                string VISUALTREE_PATH = "Packages/"+MarrowSDK.PACKAGE_NAME+"/Editor/Assets/EditorStyleSheets/MarrowEntityPoseDecorator.uxml";
                 VisualTreeAsset visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(VISUALTREE_PATH);
                 VisualElement tree = visualTree.Instantiate();
                 tree.Bind(serializedObject);
